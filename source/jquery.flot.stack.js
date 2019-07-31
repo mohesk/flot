@@ -139,13 +139,13 @@ charts or filled areas).
                     bottom = 0;
 
                     if (px === qx) {
-                        for (m = 0; m < ps; ++m) {
-                            newpoints.push(points[i + m]);
-                        }
-
-                        newpoints[l + accumulateOffset] += qy;
-                        bottom = qy;
-
+                        if (points[i + 1] !== 0) {
+	                            for (m = 0; m < ps; ++m)
+	                                newpoints.push(points[i + m]);
+                                newpoints[l + accumulateOffset] += qy;
+	                            bottom = qy;
+	                        }
+                        
                         i += ps;
                         j += otherps;
                     } else if (px > qx) {
