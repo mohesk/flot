@@ -584,7 +584,7 @@ This plugin is used by flot for drawing lines, plots, bars or area.
                     calculatedBottom = fillTowards > axisy.min ? Math.min(axisy.max, fillTowards) : axisy.min;
 
                 for (var i = 0; i < points.length; i += ps) {
-                    if (points[i] == null) {
+                    if (points[i] == null || points[i + 1] === 0) {
                         continue;
                     }
 
